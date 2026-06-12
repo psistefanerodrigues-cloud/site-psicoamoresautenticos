@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stefane Rodrigues · Psicóloga Clínica e Terapeuta de Casais</title>
+<meta name="description" content="Fazer terapia é um ato de coragem. Terapia individual e de casal 100% online, na abordagem existencial. Um espaço seguro de escuta, vínculo e afeto para viver relações mais leves e autênticas." />
+<meta property="og:title" content="Stefane Rodrigues · Psicóloga Clínica e Terapeuta de Casais" />
+<meta property="og:description" content="Fazer terapia é um ato de coragem. Terapia individual e de casal 100% online, na abordagem existencial. Pronto(a) para viver relações mais leves e autênticas?" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amoresautenticos.com" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="theme-color" content="#2C1216" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#A8472C;--clay-deep:#893621;--ocre:#C28A5A;
+    --paper:#F2EAE0;--paper-2:#E7DACC;--wine:#2C1216;--wine-soft:#3d191e;
+    --ink:#2C1E1A;--ink-soft:#6c5448;--lineL:rgba(49,20,23,.12);--lineD:rgba(242,234,224,.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--wine);color:var(--paper);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .col{max-width:1080px;margin:0 auto;padding:0 32px}
+  .eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;margin-bottom:18px}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(44,18,22,0);transition:background .3s}
+  .topbar.solid{background:rgba(44,18,22,.96);box-shadow:0 1px 20px rgba(0,0,0,.2)}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand svg{width:26px;height:26px}
+  .brand span{font-family:'Fraunces',serif;font-weight:500;color:var(--paper);font-size:15px;letter-spacing:.02em}
+  .nav{display:none;gap:28px}
+  .nav a{font-size:13px;color:rgba(242,234,224,.8);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+  .nav a:hover{color:var(--ocre)}
+  .nav-cta{font-size:12px;letter-spacing:.06em;color:var(--paper);text-decoration:none;border:1px solid rgba(242,234,224,.3);padding:9px 20px;border-radius:2px;transition:all .2s}
+  .nav-cta:hover{background:var(--clay);border-color:var(--clay)}
+  @media(min-width:920px){.nav{display:flex}}
+
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 32px 70px;position:relative;overflow:hidden}
+  .hero-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(78vw,620px);opacity:.05;z-index:0}
+  .hero-content{max-width:900px;margin:0 auto;width:100%;position:relative;z-index:2}
+  .hero .eyebrow{color:var(--ocre)}
+  .hero-manifesto{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(40px,8.5vw,84px);line-height:1.02;letter-spacing:-.02em;margin-bottom:40px}
+  .hero-manifesto em{font-style:italic;color:var(--ocre)}
+  .hero-body{max-width:540px}
+  .hero-body p{font-size:clamp(15px,2.3vw,17.5px);line-height:1.9;color:rgba(242,234,224,.82);margin-bottom:16px}
+  .hero-body strong{color:var(--paper);font-weight:400}
+
+  .quote{background:var(--clay);padding:72px 32px;text-align:center}
+  .quote-inner{max-width:760px;margin:0 auto}
+  .quote-txt{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(22px,4vw,34px);line-height:1.4}
+  .quote-by{margin-top:24px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,234,224,.72)}
+
+  .sobre{background:var(--paper);color:var(--ink);padding:96px 0}
+  .sobre .eyebrow{color:var(--clay)}
+  .sobre-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+  .sobre-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,5.5vw,48px);line-height:1.08;color:var(--wine)}
+  .sobre-h em{font-style:italic;color:var(--clay)}
+  .sobre-p{font-size:16px;line-height:1.9;color:var(--ink);margin-bottom:16px}
+  .sobre-p strong{color:var(--clay-deep);font-weight:500}
+  .cred-box{margin-top:34px;background:var(--paper-2);border-left:3px solid var(--clay);border-radius:6px;padding:30px 32px}
+  .cred-title{font-family:'Fraunces',serif;font-weight:500;font-size:19px;color:var(--wine);margin-bottom:20px}
+  .cred{display:flex;flex-direction:column;gap:12px}
+  .cred-row{display:flex;gap:12px;align-items:baseline}
+  .cred-dot{width:5px;height:5px;border-radius:50%;background:var(--clay);flex-shrink:0;transform:translateY(-2px)}
+  .cred-txt{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+  @media(min-width:780px){.sobre-grid{grid-template-columns:.82fr 1.18fr;gap:64px}.sobre-head{position:sticky;top:100px}}
+
+  .serv{background:var(--wine);padding:96px 0}
+  .serv .eyebrow{color:var(--ocre)}
+  .serv-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.12;margin-bottom:14px;max-width:20ch}
+  .serv-sub{font-size:15px;color:rgba(242,234,224,.7);max-width:52ch;margin-bottom:48px;line-height:1.8}
+  .serv-list{display:grid;grid-template-columns:1fr;gap:1px;background:var(--lineD);border:1px solid var(--lineD)}
+  @media(min-width:680px){.serv-list{grid-template-columns:1fr 1fr}}
+  .serv-item{background:var(--wine);padding:36px 32px;transition:background .25s;display:flex;flex-direction:column}
+  .serv-item:hover{background:var(--wine-soft)}
+  .serv-item-t{font-family:'Fraunces',serif;font-weight:500;font-size:23px;color:var(--paper);margin-bottom:12px}
+  .serv-item-d{font-size:14px;color:rgba(242,234,224,.72);line-height:1.75;margin-bottom:22px;flex-grow:1}
+  .serv-item-link{font-size:12.5px;letter-spacing:.05em;color:var(--ocre);text-decoration:none;transition:color .2s;align-self:flex-start;border:1px solid rgba(194,138,90,.4);padding:10px 20px;border-radius:3px}
+  .serv-item-link:hover{color:var(--paper);background:var(--clay);border-color:var(--clay)}
+
+  .curso{background:var(--paper-2);color:var(--ink);padding:96px 0}
+  .curso .eyebrow{color:var(--clay)}
+  .curso-card{background:var(--wine);color:var(--paper);border-radius:8px;padding:56px 44px;position:relative;overflow:hidden}
+  .curso-mark{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:240px;opacity:.07}
+  .curso-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ocre);margin-bottom:16px}
+  .curso-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,4.5vw,40px);line-height:1.1;margin-bottom:16px}
+  .curso-p{font-size:15.5px;line-height:1.85;color:rgba(242,234,224,.8);margin-bottom:28px;max-width:54ch;position:relative;z-index:2}
+  .btn-primary{display:inline-block;background:var(--clay);color:var(--paper);font-size:14px;font-weight:400;letter-spacing:.04em;padding:16px 38px;border-radius:3px;text-decoration:none;transition:background .2s}
+  .btn-primary:hover{background:var(--ocre)}
+
+  .ferr{background:var(--paper);color:var(--ink);padding:96px 0}
+  .ferr .eyebrow{color:var(--clay)}
+  .ferr-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.12;color:var(--wine);margin-bottom:14px}
+  .ferr-sub{font-size:15px;color:var(--ink-soft);margin-bottom:40px;max-width:50ch;line-height:1.8}
+  .ferr-scroll{display:flex;gap:20px;overflow-x:auto;padding:4px 32px 28px;margin:0 -32px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .ferr-scroll::-webkit-scrollbar{height:6px}
+  .ferr-scroll::-webkit-scrollbar-thumb{background:var(--clay);border-radius:3px}
+  .ferr-card{flex:0 0 78%;max-width:320px;scroll-snap-align:start;background:#fff;border-radius:8px;padding:34px 30px;border-top:4px solid var(--clay);display:flex;flex-direction:column;min-height:240px;box-shadow:0 1px 30px rgba(44,18,22,.05)}
+  @media(min-width:680px){.ferr-card{flex:0 0 320px}}
+  .ferr-card-tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:14px}
+  .ferr-card-t{font-family:'Fraunces',serif;font-weight:500;font-size:24px;color:var(--wine);margin-bottom:12px;line-height:1.15}
+  .ferr-card-d{font-size:14px;color:var(--ink-soft);line-height:1.75;flex-grow:1;margin-bottom:22px}
+  .ferr-card-link{font-size:12.5px;letter-spacing:.05em;color:var(--clay);text-decoration:none;font-weight:500;align-self:flex-start}
+  .ferr-card-link:hover{text-decoration:underline}
+  .ferr-hint{font-size:11.5px;color:var(--ink-soft);font-style:italic;margin-top:6px;opacity:.7}
+
+  .redes{background:var(--wine);padding:84px 0 0;text-align:center}
+  .redes .eyebrow{color:var(--ocre)}
+  .redes-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(26px,4.5vw,38px);color:var(--paper);margin-bottom:36px}
+  .redes-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:640px;margin:0 auto}
+  .rede{display:inline-block;border:1px solid var(--lineD);color:var(--paper);text-decoration:none;padding:14px 28px;border-radius:3px;font-size:14px;letter-spacing:.03em;transition:all .2s}
+  .rede:hover{background:var(--clay);border-color:var(--clay)}
+
+  footer{background:var(--wine);padding:64px 32px 44px;text-align:center;border-top:1px solid var(--lineD);margin-top:84px}
+  footer svg{width:38px;height:38px;margin-bottom:18px}
+  .foot-sub{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+  .foot-sub a{font-size:12px;color:rgba(242,234,224,.6);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+  .foot-sub a:hover{color:var(--ocre)}
+  .foot-txt{font-size:11.5px;color:rgba(242,234,224,.45);letter-spacing:.08em}
+
+  /* DOR / ISSO E PRA VOCE */
+  .dor{background:var(--paper-2);color:var(--ink);padding:96px 0}
+  .dor .eyebrow{color:var(--clay)}
+  .dor-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.12;color:var(--wine);margin-bottom:40px;max-width:22ch}
+  .dor-h em{font-style:italic;color:var(--clay)}
+  .dor-list{display:grid;grid-template-columns:1fr;gap:14px;max-width:680px}
+  .dor-item{background:var(--wine);border-radius:8px;padding:24px 28px;display:flex;gap:18px;align-items:flex-start}
+  .dor-ico{flex-shrink:0;width:22px;height:22px;margin-top:2px}
+  .dor-txt{font-size:15px;color:rgba(242,234,224,.92);line-height:1.75}
+  .dor-cta{margin-top:30px}
+  .dor-cta .btn-primary{background:var(--clay);color:var(--paper);display:inline-block;font-size:14.5px;letter-spacing:.04em;padding:17px 42px;border-radius:3px;text-decoration:none;transition:background .2s}
+  .dor-cta .btn-primary:hover{background:var(--wine)}
+  .dor-fecho{margin-top:36px;font-size:16px;line-height:1.9;color:var(--ink-soft);max-width:60ch}
+  .dor-fecho strong{color:var(--clay-deep);font-weight:500}
+
+  /* PROVA SOCIAL */
+  .prova{background:var(--wine);padding:72px 0;border-top:1px solid var(--lineD)}
+  .prova-grid{display:grid;grid-template-columns:1fr;gap:36px;text-align:center}
+  @media(min-width:680px){.prova-grid{grid-template-columns:repeat(3,1fr)}}
+  .prova-num{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,5vw,52px);color:var(--ocre);line-height:1}
+  .prova-lbl{font-size:13px;color:rgba(242,234,224,.7);margin-top:10px;line-height:1.6}
+  .prova-google{margin-top:44px;text-align:center}
+  .prova-google a{display:inline-flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;border:1px solid var(--lineD);padding:14px 26px;border-radius:3px;font-size:14px;transition:all .2s}
+  .prova-google a:hover{background:var(--clay);border-color:var(--clay)}
+  .stars{color:var(--ocre);letter-spacing:2px}
+
+  /* CTA FINAL */
+  .ctafinal{background:var(--clay);padding:100px 32px;text-align:center}
+  .ctafinal-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(30px,6vw,54px);line-height:1.1;color:var(--paper);max-width:18ch;margin:0 auto 22px}
+  .ctafinal-h em{font-style:italic}
+  .ctafinal-p{font-size:16px;line-height:1.85;color:rgba(242,234,224,.85);max-width:52ch;margin:0 auto 40px}
+  .btn-big{display:inline-block;background:var(--wine);color:var(--paper);font-size:15px;font-weight:400;letter-spacing:.04em;padding:19px 52px;border-radius:3px;text-decoration:none;transition:all .2s}
+  .btn-big:hover{background:var(--paper);color:var(--wine)}
+
+  /* MENU MOBILE */
+  .burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:90}
+  .burger span{width:24px;height:1.5px;background:var(--paper);transition:all .3s}
+  @media(min-width:920px){.burger{display:none}}
+  .mmenu{position:fixed;inset:0;background:var(--wine);z-index:85;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+  .mmenu.open{display:flex}
+  .mmenu a{font-family:'Fraunces',serif;font-size:26px;color:var(--paper);text-decoration:none}
+  .mmenu a:hover{color:var(--ocre)}
+  .mmenu-close{position:absolute;top:22px;right:28px;background:none;border:none;color:var(--paper);font-size:30px;cursor:pointer;line-height:1}
+
+  /* hint so mobile */
+  @media(min-width:680px){.ferr-hint{display:none}}
+
+
+  /* COMO FUNCIONA - linha do tempo */
+  .passos{background:var(--paper);color:var(--ink);padding:96px 0}
+  .passos .eyebrow{color:var(--clay)}
+  .passos-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.12;color:var(--wine);margin-bottom:10px;max-width:22ch}
+  .passos-sub{font-size:15px;color:var(--ink-soft);max-width:50ch;margin-bottom:48px;line-height:1.8}
+  .jornada{position:relative;max-width:640px}
+  .jstep{position:relative;padding:0 0 44px 64px}
+  .jstep:last-child{padding-bottom:8px}
+  .jstep::before{content:'';position:absolute;left:21px;top:46px;bottom:-2px;width:1.5px;background:linear-gradient(to bottom,var(--clay),rgba(168,71,44,.15))}
+  .jstep:last-child::before{display:none}
+  .jnum{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--wine);color:var(--ocre);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:400}
+  .jt{font-family:'Fraunces',serif;font-weight:500;font-size:22px;color:var(--wine);margin-bottom:8px;padding-top:6px}
+  .jd{font-size:15px;color:var(--ink-soft);line-height:1.85;max-width:52ch}
+  .jd strong{color:var(--clay-deep);font-weight:500}
+  .jornada-cta{margin-top:40px;padding-left:64px}
+  .jornada-cta a{display:inline-block;border:1.5px solid var(--clay);color:var(--clay);font-size:14px;letter-spacing:.04em;padding:14px 34px;border-radius:3px;text-decoration:none;transition:all .2s}
+  .jornada-cta a:hover{background:var(--clay);color:var(--paper)}
+  @media(max-width:480px){.jstep{padding-left:56px}.jornada-cta{padding-left:0}}
+
+  /* FAQ */
+  .faq{background:var(--paper-2);color:var(--ink);padding:96px 0}
+  .faq .eyebrow{color:var(--clay)}
+  .faq-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.12;color:var(--wine);margin-bottom:44px}
+  .qa{border-top:1px solid var(--lineL)}
+  .qa:last-of-type{border-bottom:1px solid var(--lineL)}
+  .q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(17px,2.6vw,21px);color:var(--wine);transition:color .2s}
+  .q:hover{color:var(--clay)}
+  .q-ic{font-size:22px;color:var(--clay);flex-shrink:0;transition:transform .3s;line-height:1;font-weight:300}
+  .qa.open .q-ic{transform:rotate(45deg)}
+  .a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .a-in{padding:0 0 26px;font-size:14.5px;line-height:1.85;color:var(--ink-soft);max-width:660px}
+
+  /* ESCASSEZ */
+  .escassez{font-size:13px;color:rgba(242,234,224,.75);margin-top:26px;font-style:italic;max-width:46ch;margin-left:auto;margin-right:auto;line-height:1.7}
+  .cta-pergunta{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(17px,3vw,21px);color:rgba(242,234,224,.9);max-width:44ch;margin:0 auto 14px;line-height:1.5}
+
+</style>
+</head>
+<body>
+
+  <div class="topbar" id="topbar">
+    <div class="brand">
+      <svg viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" stroke="#C28A5A" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span>Amores Autênticos</span>
+    </div>
+    <nav class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#curso">Curso</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#redes">Redes</a>
+    </nav>
+    <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar." class="nav-cta">Agendar</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+
+  <div class="mmenu" id="mmenu">
+    <button class="mmenu-close" id="mclose">&times;</button>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#curso">Curso</a>
+    <a href="#ferramentas">Ferramentas</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#redes">Redes</a>
+    <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar.">Agendar</a>
+  </div>
+
+  <section class="hero">
+    <svg class="hero-mark" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" stroke="#C28A5A" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+    <div class="hero-content">
+      <p class="eyebrow">Stefane Lima Rodrigues - Mestre em Psicologia, Psicóloga Clínica e Terapeuta de Casais - CRP 05/73756</p>
+      <h1 class="hero-manifesto">Fazer terapia é um ato de <em>coragem.</em></h1>
+      <div class="hero-body">
+        <p>Terapia exige coragem porque dói, é desconfortável e faz a gente olhar para coisas que às vezes preferimos ignorar.</p>
+        <p>Porém, é olhando para nossas angústias e nos conectando com elas que podemos ser <strong>protagonistas da nossa própria história.</strong></p>
+        <p>Para isso, é necessário um espaço seguro de escuta e acolhimento. É isso que é o espaço terapêutico, e é o seu que eu espero facilitar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="quote-inner">
+      <p class="quote-txt">"O importante não é o que fizeram de nós, mas o que nós mesmos fazemos com o que fizeram de nós."</p>
+      <p class="quote-by">Jean-Paul Sartre</p>
+    </div>
+  </section>
+
+
+  <!-- ISSO E PRA VOCE -->
+  <section class="dor">
+    <div class="col">
+      <p class="eyebrow">Talvez você se reconheça</p>
+      <h2 class="dor-h">A terapia pode ser pra você se...</h2>
+      <div class="dor-list">
+        <div class="dor-item"><svg class="dor-ico" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" fill="#C28A5A"/></svg><span class="dor-txt">As brigas com quem você ama parecem se repetir em looping, sempre sobre as mesmas coisas.</span></div>
+        <div class="dor-item"><svg class="dor-ico" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" fill="#C28A5A"/></svg><span class="dor-txt">Você sente que se perdeu de si nas suas relações, e não sabe mais o que é seu e o que é expectativa dos outros.</span></div>
+        <div class="dor-item"><svg class="dor-ico" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" fill="#C28A5A"/></svg><span class="dor-txt">Tem angústias que você empurra com a barriga há tempo demais, e elas continuam voltando.</span></div>
+        <div class="dor-item"><svg class="dor-ico" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" fill="#C28A5A"/></svg><span class="dor-txt">Você quer se comunicar melhor, mas na hora do conflito tudo desanda.</span></div>
+        <div class="dor-item"><svg class="dor-ico" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" fill="#C28A5A"/></svg><span class="dor-txt">Sente que vive no automático e queria uma vida com mais sentido e autenticidade.</span></div>
+      </div>
+      <p class="dor-fecho">Se algo aí em cima fez eco, saiba: nada disso te define. São pontos de partida. <strong>E olhar pra eles, com apoio, é onde a mudança começa.</strong></p>
+      <div class="dor-cta"><a class="btn-primary" href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar.">Agendar uma consulta agora</a></div>
+    </div>
+  </section>
+
+
+  <!-- COMO FUNCIONA -->
+  <section class="passos">
+    <div class="col">
+      <p class="eyebrow">Simples de começar</p>
+      <h2 class="passos-h">O caminho até a primeira sessão é mais simples do que parece</h2>
+      <p class="passos-sub">Dar o primeiro passo costuma ser a parte mais difícil — então eu fiz questão de deixá-lo leve.</p>
+      <div class="jornada">
+        <div class="jstep">
+          <div class="jnum">1</div>
+          <p class="jt">Você me manda uma mensagem</p>
+          <p class="jd">Sem formulário, sem triagem fria. Uma mensagem sua no WhatsApp já é o começo — pode ser só um <strong>"oi, quero saber mais"</strong>. Eu respondo pessoalmente.</p>
+        </div>
+        <div class="jstep">
+          <div class="jnum">2</div>
+          <p class="jt">A gente conversa, sem compromisso</p>
+          <p class="jd">Te explico como funciona, você tira todas as dúvidas, e juntas(os) encontramos o dia e horário que cabem na sua vida. Se não fizer sentido agora, tudo bem também.</p>
+        </div>
+        <div class="jstep">
+          <div class="jnum">3</div>
+          <p class="jt">O espaço passa a ser seu</p>
+          <p class="jd">Na primeira sessão, a escuta começa. Sem julgamento, sem roteiro fixo, no seu ritmo — com <strong>vínculo, presença e afeto</strong>.</p>
+        </div>
+      </div>
+      <div class="jornada-cta"><a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar.">Dar o primeiro passo</a></div>
+    </div>
+  </section>
+
+  <section class="sobre" id="sobre">
+    <div class="col">
+      <div class="sobre-grid">
+        <div class="sobre-head">
+          <p class="eyebrow">Quem sou</p>
+          <h2 class="sobre-h">Oi, eu sou a Psicóloga <em>Stefane Rodrigues</em></h2>
+        </div>
+        <div>
+          <p class="sobre-p">Mas pode me chamar de Ste. Sou psicóloga clínica e pesquisadora na área de <strong>gênero e relacionamentos</strong>. Atuo com terapia individual e de casal a partir da Psicologia Existencial Fenomenológica, uma abordagem que te coloca como protagonista do seu próprio processo terapêutico, para te ajudar a escutar suas angústias e viver de forma mais autêntica.</p>
+          <p class="sobre-p">Acredito que a psicologia é um espaço de troca, um lugar seguro onde você constrói ferramentas para a vida e aprende a se olhar com mais honestidade, para construir a versão que você gostaria de ser. Meu trabalho é ser a facilitadora desse processo, que não é tão simples e linear, e não tem fórmulas prontas.</p>
+          <div class="cred-box">
+          <p class="cred-title">Minhas formações</p>
+          <div class="cred">
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Mestrado em Psicologia Social, como bolsista CAPES</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Pós-graduada em Psicologia Jurídica</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Pós-graduanda em Psicologia Existencial Fenomenológica</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Pesquisadora em gênero, autenticidade e relações afetivas</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Formação em Terapia de Casais e Família</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Formação em Acolhimento em Violência de Gênero</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Formação em Relações Abusivas e Violência Doméstica</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Atendimento de casais na perspectiva fenomenológica</span></div>
+            <div class="cred-row"><span class="cred-dot"></span><span class="cred-txt">Promoção e direitos de pessoas LGBTQIA+</span></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="serv" id="servicos">
+    <div class="col">
+      <p class="eyebrow">Como posso te ajudar</p>
+      <h2 class="serv-h">Meus serviços</h2>
+      <p class="serv-sub">Cada encontro é construído a partir da sua história. Conheça as formas de trabalharmos juntos e, se algo fizer sentido para você, vamos conversar.</p>
+      <div class="serv-list">
+        <div class="serv-item">
+          <h3 class="serv-item-t">Terapia individual</h3>
+          <p class="serv-item-d">Sessões de 50 minutos, na modalidade online, realizadas semanalmente a partir da abordagem existencial.</p>
+          <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Tenho%20interesse%20em%20terapia%20individual%20e%20gostaria%20de%20saber%20mais." class="serv-item-link">Saiba mais →</a>
+        </div>
+        <div class="serv-item">
+          <h3 class="serv-item-t">Terapia de casais</h3>
+          <p class="serv-item-d">Sessões de 1 hora, na modalidade online, realizadas semanalmente a partir da abordagem existencial.</p>
+          <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Tenho%20interesse%20em%20terapia%20de%20casais%20e%20gostaria%20de%20saber%20mais." class="serv-item-link">Saiba mais →</a>
+        </div>
+        <div class="serv-item">
+          <h3 class="serv-item-t">Supervisão clínica</h3>
+          <p class="serv-item-d">Supervisão individual para psicólogos que querem mais segurança na sua atuação clínica. Online, quinzenal, com 1 hora de duração e materiais complementares.</p>
+          <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Tenho%20interesse%20na%20supervis%C3%A3o%20cl%C3%ADnica%20e%20gostaria%20de%20saber%20mais." class="serv-item-link">Saiba mais →</a>
+        </div>
+        <div class="serv-item">
+          <h3 class="serv-item-t">Palestras e eventos</h3>
+          <p class="serv-item-d">Temas de gênero e relacionamentos, família, comunicação e saúde mental. Experiência com empresas e instituições como EMOP, Secretaria de Educação do Estado, Enel e clínicas de saúde.</p>
+          <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20sobre%20palestras%20e%20eventos." class="serv-item-link">Saiba mais →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="curso" id="curso">
+    <div class="col">
+      <p class="eyebrow">Cursos e produtos</p>
+      <div class="curso-card">
+        <svg class="curso-mark" viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" stroke="#C28A5A" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <p class="curso-tag">Curso online</p>
+        <h3 class="curso-h">Conversas que Conectam</h3>
+        <p class="curso-p">Um curso sobre comunicação nos relacionamentos, para casais que querem sair dos mesmos conflitos de sempre e aprender a se ouvir de verdade. No seu ritmo, do seu jeito.</p>
+        <a href="https://checkout.neonpay.com.br/checkout/cmpiw7f7p0b2v01n2ru8mkdp6?offer=0TNE5TL" class="btn-primary" target="_blank">Conhecer o curso</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ferr" id="ferramentas">
+    <div class="col">
+      <p class="eyebrow">Gratuito para você</p>
+      <h2 class="ferr-h">Ferramentas gratuitas</h2>
+      <p class="ferr-sub">Recursos para você começar a olhar para suas relações com mais clareza, sem custo nenhum.</p>
+    </div>
+    <div class="col">
+      <div class="ferr-scroll">
+        <div class="ferr-card">
+          <p class="ferr-card-tag">Checklist</p>
+          <h3 class="ferr-card-t">Saúde do casal</h3>
+          <p class="ferr-card-d">Um diagnóstico rápido para entender como anda a saúde da sua relação e onde vale a pena olhar com mais atenção.</p>
+          <a href="https://checklist-saude-do-casal.vercel.app/" class="ferr-card-link" target="_blank">Acessar gratuitamente →</a>
+        </div>
+        <div class="ferr-card">
+          <p class="ferr-card-tag">Quiz</p>
+          <h3 class="ferr-card-t">Estilo de comunicação</h3>
+          <p class="ferr-card-d">Descubra qual é o seu estilo de comunicação nos relacionamentos e como ele afeta seus vínculos.</p>
+          <a href="https://quiz-estilo-comunicacao.vercel.app/" class="ferr-card-link" target="_blank">Acessar gratuitamente →</a>
+        </div>
+        <div class="ferr-card">
+          <p class="ferr-card-tag">Guia de reflexão</p>
+          <h3 class="ferr-card-t">Perguntas que Conectam</h3>
+          <p class="ferr-card-d">18 perguntas-guia para você olhar com mais carinho e honestidade para o seu relacionamento — sozinha(o) ou a dois.</p>
+          <a href="https://perguntas-queconectam.vercel.app/" class="ferr-card-link" target="_blank">Acessar gratuitamente →</a>
+        </div>
+        <div class="ferr-card">
+          <p class="ferr-card-tag">Autoconhecimento</p>
+          <h3 class="ferr-card-t">Mapa da vida equilibrada</h3>
+          <p class="ferr-card-d">Uma ferramenta para enxergar as diferentes áreas da sua vida e perceber onde você quer colocar mais cuidado.</p>
+          <a href="https://mente-aventura-2cge.vercel.app/" class="ferr-card-link" target="_blank">Acessar gratuitamente →</a>
+        </div>
+      </div>
+      <p class="ferr-hint">arraste para o lado para ver todas →</p>
+    </div>
+  </section>
+
+
+  <!-- PROVA SOCIAL -->
+  <section class="prova">
+    <div class="col">
+      <div class="prova-grid">
+        <div><p class="prova-num">7+</p><p class="prova-lbl">anos dedicados ao estudo de gênero e relacionamentos</p></div>
+        <div><p class="prova-num">100%</p><p class="prova-lbl">online, com pacientes em todo o Brasil e fora dele</p></div>
+        <div><p class="prova-num">★★★★★</p><p class="prova-lbl">avaliações no Google</p></div>
+      </div>
+      <div class="prova-google">
+        <a href="https://www.google.com/search?kgmid=%2Fg%2F11wmx4lcqj&q=Psic%C3%B3loga+Stefane+Rodrigues" target="_blank"><span class="stars">★★★★★</span> Ver avaliações no Google</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="col">
+      <p class="eyebrow">Suas dúvidas</p>
+      <h2 class="faq-h">Perguntas frequentes</h2>
+
+      <div class="qa">
+        <button class="q" onclick="fq(this)">Nunca fiz terapia. E se eu não souber o que falar?<span class="q-ic">+</span></button>
+        <div class="a"><div class="a-in">Isso é mais comum do que você imagina, e está tudo bem. Não existe jeito certo de chegar na terapia. Você não precisa ter um discurso pronto nem saber nomear o que sente. A gente começa de onde você estiver, e o silêncio também faz parte. Meu papel é facilitar esse caminho com você.</div></div>
+      </div>
+      <div class="qa">
+        <button class="q" onclick="fq(this)">Terapia online funciona mesmo?<span class="q-ic">+</span></button>
+        <div class="a"><div class="a-in">Funciona. A pesquisa em psicologia mostra que a terapia online tem eficácia comparável à presencial, e ela traz vantagens reais: você faz do lugar onde se sente confortável, sem deslocamento, com mais facilidade de encaixar na rotina. O que constrói o processo é o vínculo, e ele se constrói também pela tela.</div></div>
+      </div>
+      <div class="qa">
+        <button class="q" onclick="fq(this)">Você aceita plano de saúde?<span class="q-ic">+</span></button>
+        <div class="a"><div class="a-in">Não trabalho com convênios, mas forneço Receita Saúde e toda a documentação necessária para que você solicite o reembolso diretamente no seu plano. Muitos planos reembolsam parte significativa do valor. Se tiver dúvidas sobre como funciona, me pergunta no WhatsApp.</div></div>
+      </div>
+      <div class="qa">
+        <button class="q" onclick="fq(this)">Quanto tempo dura o processo?<span class="q-ic">+</span></button>
+        <div class="a"><div class="a-in">Não existe resposta única, porque cada processo é singular. Algumas pessoas trabalham uma questão pontual em alguns meses; outras escolhem a terapia como um espaço contínuo de cuidado. O ritmo é seu, e a gente vai conversando sobre isso ao longo do caminho, com honestidade.</div></div>
+      </div>
+      <div class="qa">
+        <button class="q" onclick="fq(this)">Como sei se é o momento certo de começar?<span class="q-ic">+</span></button>
+        <div class="a"><div class="a-in">Se você chegou até aqui, lendo isso, talvez uma parte de você já saiba. Não precisa estar "mal o suficiente" pra buscar terapia. Querer se conhecer melhor, cuidar das suas relações ou simplesmente ter um espaço seu já são motivos legítimos.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="ctafinal">
+    <p class="cta-pergunta">Há quanto tempo você vem adiando essa conversa com você mesma(o)?</p>
+    <h2 class="ctafinal-h">Pronto<em>(a)</em> para viver relações mais leves e autênticas?</h2>
+    <p class="ctafinal-p">Um espaço para se olhar com mais carinho, abraçar suas angústias e construir ferramentas para uma vida mais autêntica. Sem fórmulas prontas, no seu tempo.</p>
+    <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar." class="btn-big">Quero agendar uma conversa</a>
+    <p class="escassez">Atendo um número limitado de pessoas por semana, para garantir presença real em cada processo.</p>
+  </section>
+
+  <section class="redes" id="redes">
+    <div class="col">
+      <p class="eyebrow">Vamos continuar a conversa</p>
+      <h2 class="redes-h">Me encontre por aí</h2>
+      <div class="redes-links">
+        <a href="https://www.instagram.com/sterodrigues.psi" class="rede" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@sterodrigues.psi?lang=pt-BR" class="rede" target="_blank">TikTok</a>
+        <a href="https://www.youtube.com/@Sterodriguespsi" class="rede" target="_blank">YouTube</a>
+        <a href="https://substack.com/@sterodriguespsi?utm_source=user-menu" class="rede" target="_blank">Substack</a>
+      </div>
+    </div>
+    <footer>
+      <svg viewBox="0 0 140 130" xmlns="http://www.w3.org/2000/svg"><path d="M70 10 C38 10 14 30 14 56 C14 76 26 92 46 100 C44 112 36 120 26 124 C40 122 56 114 64 106 C66 106 68 107 70 107 C102 107 126 87 126 56 C126 30 102 10 70 10 Z" stroke="#C28A5A" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M70 82 C70 82 46 66 46 50 C46 41 52 35 61 35 C65.5 35 70 40 70 40 C70 40 74.5 35 79 35 C88 35 94 41 94 50 C94 66 70 82 70 82 Z" stroke="#C28A5A" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <div class="foot-sub">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#curso">Curso</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="https://wa.me/5521981673673?text=Ol%C3%A1%2C%20Stefane%21%20Gostaria%20de%20saber%20mais%20e%20agendar.">Agendar</a>
+      </div>
+      <p class="foot-txt">Me. Stefane Rodrigues · Psicóloga Clínica · CRP 05/73756</p>
+    </footer>
+  </section>
+
+  <script>
+    var tb=document.getElementById('topbar');
+    var bg=document.getElementById('burger'),mm=document.getElementById('mmenu'),mc=document.getElementById('mclose');
+    bg.addEventListener('click',function(){mm.classList.add('open')});
+    mc.addEventListener('click',function(){mm.classList.remove('open')});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open')})});
+    function fq(btn){
+      var qa=btn.parentElement,a=qa.querySelector('.a'),open=qa.classList.contains('open');
+      document.querySelectorAll('.qa.open').forEach(function(i){i.classList.remove('open');i.querySelector('.a').style.maxHeight=null});
+      if(!open){qa.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+    }
+    window.fq=fq;
+    window.addEventListener('scroll',function(){
+      if(window.scrollY>40){tb.classList.add('solid')}else{tb.classList.remove('solid')}
+    });
+  </script>
+
+</body>
+</html>
